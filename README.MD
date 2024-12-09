@@ -15,6 +15,3 @@ Este curso, disponível no YouTube, é ideal para quem deseja:
 - **Professor experiente**: Deivid Willyan traz um aprendizado baseado em sua vivência como Coordenador da maior comunidade Flutter do Brasil.  
 - **Material direto ao ponto**: Aprenda rapidamente sem perder tempo com o desnecessário.  
 - **Enfoque prático**: O curso conecta teoria e prática para preparar você para o mercado de trabalho.  
-
----
-👨‍💻 **Mantenedor**: [GabRodrigues23]  

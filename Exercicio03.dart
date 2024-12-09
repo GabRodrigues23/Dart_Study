@@ -18,41 +18,37 @@ void main() {
   d. O novo salário, após o aumento.
   */
 
-  Colaborador colaborador1 = new Colaborador(1200);
-  colaborador1.exibeInformacoes();
+  Colaborador colaborador1 = Colaborador(salario: 1200);
+  colaborador1.calcularReajuste();
 }
 
 class Colaborador {
-  double _salario;
+  double salario;
   double? percentual;
   double? valorAumento;
   double? novoSalario;
 
-  Colaborador(this._salario);
+  Colaborador({required this.salario});
 
-  void setSalario(double salario) => _salario = salario;
-  double get getSalario => _salario;
-
-  double calculaNovoSalario(double salario) {
+  void calcularReajuste() {
     if (salario > 0 && salario <= 200) {
-      return salario + (salario * 0.20);
+      percentual = 0.20;
     } else if (salario > 200 && salario <= 700) {
-      return salario + (salario * 0.15);
+      percentual = 0.15;
     } else if (salario > 700 && salario <= 1500) {
-      return salario + (salario * 0.10);
+      percentual = 0.10;
     } else if (salario > 1500) {
-      return salario + (salario * 0.05);
+      percentual = 0.05;
     } else {
-      return 0;
+      percentual = 0;
     }
-  }
 
-  void exibeInformacoes() {
-    void call() => print('''
-      Salário Atual: R\$$getSalario
-      Reajuste: $percentual%
-      Valor do Aumento: R\$$valorAumento
-      Novo Salário: R\$$novoSalario
-    ''');
+    valorAumento = salario * percentual!;
+    novoSalario = salario + valorAumento!;
+
+    print("Salário Atual: R\$${salario.toStringAsFixed(2)}");
+    print("Percentual de Aumento: ${(percentual! * 100)}%");
+    print("Valor do Aumento: R\$${valorAumento!.toStringAsFixed(2)}");
+    print("Novo Salário: R\$${novoSalario!.toStringAsFixed(2)}");
   }
 }
